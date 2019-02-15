@@ -1,0 +1,21 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2019-02-12 16:27:40.413 UTC</timestamp>
+  <original>
+    <name>jenkins-artifactory/devopsarea:devopsarea</name>
+    <number>1</number>
+  </original>
+  <md5sum>676e6d14b24a704a02cb64811a175273</md5sum>
+  <fileName>devopsarea:devopsarea-1.0.war</fileName>
+  <usages>
+    <entry>
+      <string>jenkins-artifactory</string>
+      <ranges>1</ranges>
+    </entry>
+    <entry>
+      <string>jenkins-artifactory/devopsarea:devopsarea</string>
+      <ranges>1</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>

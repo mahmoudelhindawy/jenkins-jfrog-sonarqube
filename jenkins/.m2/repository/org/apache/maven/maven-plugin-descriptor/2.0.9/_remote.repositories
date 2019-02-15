@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Feb 12 16:26:02 UTC 2019
+maven-plugin-descriptor-2.0.9.jar>central=
+maven-plugin-descriptor-2.0.9.jar>artifactory-release=
+maven-plugin-descriptor-2.0.9.pom>artifactory-release=
+maven-plugin-descriptor-2.0.9.pom>central=

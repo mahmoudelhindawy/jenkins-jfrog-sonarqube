@@ -1,0 +1,25 @@
+version: "3"
+services:
+      jenkins:
+          image: jenkinsci/jenkins
+          ports:
+                  - "8080:8080"
+          container_name: jenkins
+          links:
+                  - artifactory
+                  - sonarqube
+          volumes:
+                  - ./jenkins:/var/jenkins_home:rw
+      artifactory:
+          image: mattgruter/artifactory
+          ports:
+                  - "9090:8080"
+          container_name: artifactory
+          volumes:
+                  - ./artifactory:/artifactory:rw
+      sonarqube:
+          image: sonarqube:6.7-alpine
+          ports:
+                  - "9000:9000"
+                  - "9092:9092"
+          container_name: sonarqube

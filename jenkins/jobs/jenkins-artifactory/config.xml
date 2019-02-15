@@ -1,0 +1,165 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<maven2-moduleset plugin="maven-plugin@3.2">
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.9.3">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/mahmoudelhindawy/java-testapp.git</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions/>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <rootModule>
+    <groupId>devopsarea</groupId>
+    <artifactId>devopsarea</artifactId>
+  </rootModule>
+  <aggregatorStyleBuild>true</aggregatorStyleBuild>
+  <incrementalBuild>false</incrementalBuild>
+  <ignoreUpstremChanges>false</ignoreUpstremChanges>
+  <ignoreUnsuccessfulUpstreams>false</ignoreUnsuccessfulUpstreams>
+  <archivingDisabled>false</archivingDisabled>
+  <siteArchivingDisabled>false</siteArchivingDisabled>
+  <fingerprintingDisabled>false</fingerprintingDisabled>
+  <resolveDependencies>false</resolveDependencies>
+  <processPlugins>false</processPlugins>
+  <mavenValidationLevel>-1</mavenValidationLevel>
+  <runHeadless>false</runHeadless>
+  <disableTriggerDownstreamProjects>false</disableTriggerDownstreamProjects>
+  <blockTriggerWhenBuilding>true</blockTriggerWhenBuilding>
+  <settings class="jenkins.mvn.DefaultSettingsProvider"/>
+  <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
+  <reporters/>
+  <publishers>
+    <org.jfrog.hudson.ArtifactoryRedeployPublisher plugin="artifactory@3.1.2">
+      <evenIfUnstable>false</evenIfUnstable>
+      <deployerDetails>
+        <artifactoryName>devops-artifactory</artifactoryName>
+        <artifactoryUrl>http://artifactory:8080/artifactory</artifactoryUrl>
+        <deployReleaseRepository>
+          <keyFromText></keyFromText>
+          <keyFromSelect>ext-release-local</keyFromSelect>
+          <dynamicMode>false</dynamicMode>
+        </deployReleaseRepository>
+        <deploySnapshotRepository>
+          <keyFromText></keyFromText>
+          <keyFromSelect>ext-release-local</keyFromSelect>
+          <dynamicMode>false</dynamicMode>
+        </deploySnapshotRepository>
+        <stagingPlugin>
+          <pluginName>None</pluginName>
+        </stagingPlugin>
+        <userPluginKey>None</userPluginKey>
+      </deployerDetails>
+      <deployArtifacts>true</deployArtifacts>
+      <artifactDeploymentPatterns>
+        <includePatterns></includePatterns>
+        <excludePatterns></excludePatterns>
+      </artifactDeploymentPatterns>
+      <deployerCredentialsConfig>
+        <credentials>
+          <username></username>
+          <password></password>
+        </credentials>
+        <credentialsId></credentialsId>
+        <overridingCredentials>false</overridingCredentials>
+        <ignoreCredentialPluginDisabled>false</ignoreCredentialPluginDisabled>
+      </deployerCredentialsConfig>
+      <includeEnvVars>false</includeEnvVars>
+      <envVarsPatterns>
+        <includePatterns></includePatterns>
+        <excludePatterns>*password*,*secret*,*key*</excludePatterns>
+      </envVarsPatterns>
+      <passIdentifiedDownstream>false</passIdentifiedDownstream>
+      <discardOldBuilds>false</discardOldBuilds>
+      <discardBuildArtifacts>true</discardBuildArtifacts>
+      <asyncBuildRetention>false</asyncBuildRetention>
+      <deploymentProperties></deploymentProperties>
+      <enableIssueTrackerIntegration>false</enableIssueTrackerIntegration>
+      <allowPromotionOfNonStagedBuilds>false</allowPromotionOfNonStagedBuilds>
+      <filterExcludedArtifactsFromBuild>true</filterExcludedArtifactsFromBuild>
+      <recordAllDependencies>false</recordAllDependencies>
+      <defaultPromotionTargetRepository></defaultPromotionTargetRepository>
+      <deployBuildInfo>true</deployBuildInfo>
+      <aggregateBuildIssues>false</aggregateBuildIssues>
+      <customBuildName></customBuildName>
+      <overrideBuildName>false</overrideBuildName>
+    </org.jfrog.hudson.ArtifactoryRedeployPublisher>
+  </publishers>
+  <buildWrappers>
+    <org.jfrog.hudson.release.maven.MavenReleaseWrapper plugin="artifactory@3.1.2">
+      <tagPrefix></tagPrefix>
+      <releaseBranchPrefix>REL-BRANCH-</releaseBranchPrefix>
+      <targetRemoteName></targetRemoteName>
+      <alternativeGoals></alternativeGoals>
+      <defaultVersioning>GLOBAL</defaultVersioning>
+      <defaultReleaseStagingRepository></defaultReleaseStagingRepository>
+      <useReleaseBranch>true</useReleaseBranch>
+      <mavenModules/>
+      <POM__NAME>pom.xml</POM__NAME>
+    </org.jfrog.hudson.release.maven.MavenReleaseWrapper>
+    <org.jfrog.hudson.maven3.ArtifactoryMaven3NativeConfigurator plugin="artifactory@3.1.2">
+      <resolverDetails>
+        <artifactoryName>devops-artifactory</artifactoryName>
+        <artifactoryUrl>http://artifactory:8080/artifactory</artifactoryUrl>
+        <resolveSnapshotRepository>
+          <keyFromText></keyFromText>
+          <keyFromSelect>libs-release</keyFromSelect>
+          <dynamicMode>false</dynamicMode>
+        </resolveSnapshotRepository>
+        <resolveReleaseRepository>
+          <keyFromText></keyFromText>
+          <keyFromSelect>libs-release</keyFromSelect>
+          <dynamicMode>false</dynamicMode>
+        </resolveReleaseRepository>
+        <stagingPlugin/>
+      </resolverDetails>
+      <resolverCredentialsConfig>
+        <credentials>
+          <username>admin</username>
+          <password>cGFzc3dvcmQ=</password>
+        </credentials>
+        <credentialsId></credentialsId>
+        <overridingCredentials>false</overridingCredentials>
+        <ignoreCredentialPluginDisabled>false</ignoreCredentialPluginDisabled>
+      </resolverCredentialsConfig>
+    </org.jfrog.hudson.maven3.ArtifactoryMaven3NativeConfigurator>
+  </buildWrappers>
+  <prebuilders>
+    <hudson.plugins.sonar.SonarRunnerBuilder plugin="sonar@2.8.1">
+      <project></project>
+      <properties>sonaectKer.host.url=http://sonarqube:9000
+sonar.projectKey=java-test
+sonar.sources=./src
+sonar.language=java
+</properties>
+      <javaOpts></javaOpts>
+      <additionalArguments></additionalArguments>
+      <jdk>(Inherit From Job)</jdk>
+      <task></task>
+    </hudson.plugins.sonar.SonarRunnerBuilder>
+  </prebuilders>
+  <postbuilders/>
+  <runPostStepsIfResult>
+    <name>FAILURE</name>
+    <ordinal>2</ordinal>
+    <color>RED</color>
+    <completeBuild>true</completeBuild>
+  </runPostStepsIfResult>
+</maven2-moduleset>

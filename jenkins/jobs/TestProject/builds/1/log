@@ -1,0 +1,39 @@
+Started by user [8mha:////4LOjoajrb5jC5ikNOOgdLetbh4XNCmMSC9+3oxgU8nyeAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyhEgZe/dLi1CL9jMy8lMTySgCNEyVNwgAAAA==[0mmahmoud el hindawy
+Building in workspace /var/jenkins_home/workspace/TestProject
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/mahmoudelhindawy/java-testapp.git
+ > git init /var/jenkins_home/workspace/TestProject # timeout=10
+Fetching upstream changes from https://github.com/mahmoudelhindawy/java-testapp.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/mahmoudelhindawy/java-testapp.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/mahmoudelhindawy/java-testapp.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/mahmoudelhindawy/java-testapp.git # timeout=10
+Fetching upstream changes from https://github.com/mahmoudelhindawy/java-testapp.git
+ > git fetch --tags --progress https://github.com/mahmoudelhindawy/java-testapp.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 95bd7bc7ad40548f1c3f5807938f937dff7026b2 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 95bd7bc7ad40548f1c3f5807938f937dff7026b2
+Commit message: "change read me file"
+First time build. Skipping changelog.
+Unpacking https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.6.0/apache-maven-3.6.0-bin.zip to /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/devops on Jenkins
+[TestProject] $ /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/devops/bin/mvn
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.339 s
+[INFO] Finished at: 2019-02-12T15:44:54Z
+[INFO] ------------------------------------------------------------------------
+[8mha:////4BcO85xHt8soWmP6jM9jkTpXacBVvwdtRdGfDjt1EzZIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] No goals have been specified for this build. You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy. -> [Help 1]
+[8mha:////4BcO85xHt8soWmP6jM9jkTpXacBVvwdtRdGfDjt1EzZIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4BcO85xHt8soWmP6jM9jkTpXacBVvwdtRdGfDjt1EzZIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[8mha:////4BcO85xHt8soWmP6jM9jkTpXacBVvwdtRdGfDjt1EzZIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[8mha:////4BcO85xHt8soWmP6jM9jkTpXacBVvwdtRdGfDjt1EzZIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4BcO85xHt8soWmP6jM9jkTpXacBVvwdtRdGfDjt1EzZIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[8mha:////4BcO85xHt8soWmP6jM9jkTpXacBVvwdtRdGfDjt1EzZIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/NoGoalSpecifiedException
+Build step 'Invoke top-level Maven targets' marked build as failure
+Finished: FAILURE
