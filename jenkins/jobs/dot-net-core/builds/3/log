@@ -1,0 +1,59 @@
+Started by user [8mha:////4LOjoajrb5jC5ikNOOgdLetbh4XNCmMSC9+3oxgU8nyeAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyhEgZe/dLi1CL9jMy8lMTySgCNEyVNwgAAAA==[0mmahmoud el hindawy
+Building in workspace /var/jenkins_home/workspace/dot-net-core
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/mahmoudelhindawy/dotNetCoreSample.git # timeout=10
+Fetching upstream changes from https://github.com/mahmoudelhindawy/dotNetCoreSample.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/mahmoudelhindawy/dotNetCoreSample.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 59b89ac72b5bc3419d0c46e63ee4445afaba153f (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 59b89ac72b5bc3419d0c46e63ee4445afaba153f
+Commit message: "first commit"
+ > git rev-list --no-walk 59b89ac72b5bc3419d0c46e63ee4445afaba153f # timeout=10
+[dot-net-core] $ /bin/sh -xe /tmp/jenkins3374627666594047254.sh
++ docker-compose up -d
+Building dotnet
+Step 1/11 : FROM microsoft/dotnet:2.2-sdk AS build
+ ---> d5dbee97f68e
+Step 2/11 : WORKDIR /app
+ ---> Using cache
+ ---> b8a1092c647b
+Step 3/11 : COPY *.sln .
+ ---> Using cache
+ ---> f3389b646636
+Step 4/11 : COPY aspnetapp/. ./aspnetapp/
+ ---> Using cache
+ ---> f98944c56308
+Step 5/11 : RUN dotnet restore
+ ---> Using cache
+ ---> 79c5eeea264d
+Step 6/11 : WORKDIR /app/aspnetapp
+ ---> Using cache
+ ---> e2199dc720f5
+Step 7/11 : RUN dotnet publish -c Release -o out
+ ---> Using cache
+ ---> c590c3824ed0
+Step 8/11 : FROM microsoft/dotnet:2.2-aspnetcore-runtime AS runtime
+2.2-aspnetcore-runtime: Pulling from microsoft/dotnet
+Digest: sha256:988829fbff8cde8b431d045d2dd2e3ea54d69abf5c61c69794c523535ce382e7
+Status: Downloaded newer image for microsoft/dotnet:2.2-aspnetcore-runtime
+ ---> dad26d192ae6
+Step 9/11 : WORKDIR /app
+ ---> Running in acb15b2b9d3e
+Removing intermediate container acb15b2b9d3e
+ ---> a411cb73f115
+Step 10/11 : COPY --from=build /app/aspnetapp/out ./
+ ---> bf8973038afa
+Step 11/11 : ENTRYPOINT ["dotnet", "aspnetapp.dll"]
+ ---> Running in 937d4e543437
+Removing intermediate container 937d4e543437
+ ---> 8dad7bc27027
+Successfully built 8dad7bc27027
+Successfully tagged dotnetcore_dotnet:latest
+Image for service dotnet was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
+Creating dotnet ... 
+[1A[2KCreating dotnet ... [32mdone[0m[1BFinished: SUCCESS

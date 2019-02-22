@@ -1,0 +1,26 @@
+Started by user [8mha:////4LOjoajrb5jC5ikNOOgdLetbh4XNCmMSC9+3oxgU8nyeAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyhEgZe/dLi1CL9jMy8lMTySgCNEyVNwgAAAA==[0mmahmoud el hindawy
+Building in workspace /var/jenkins_home/workspace/dot-net-core
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/mahmoudelhindawy/dotNetCoreSample.git
+ > git init /var/jenkins_home/workspace/dot-net-core # timeout=10
+Fetching upstream changes from https://github.com/mahmoudelhindawy/dotNetCoreSample.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/mahmoudelhindawy/dotNetCoreSample.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/mahmoudelhindawy/dotNetCoreSample.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/mahmoudelhindawy/dotNetCoreSample.git # timeout=10
+Fetching upstream changes from https://github.com/mahmoudelhindawy/dotNetCoreSample.git
+ > git fetch --tags --progress https://github.com/mahmoudelhindawy/dotNetCoreSample.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 59b89ac72b5bc3419d0c46e63ee4445afaba153f (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 59b89ac72b5bc3419d0c46e63ee4445afaba153f
+Commit message: "first commit"
+First time build. Skipping changelog.
+[dot-net-core] $ /bin/sh -xe /tmp/jenkins7349012618350750820.sh
++ docker-compose up -d
+/tmp/jenkins7349012618350750820.sh: 2: /tmp/jenkins7349012618350750820.sh: docker-compose: not found
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

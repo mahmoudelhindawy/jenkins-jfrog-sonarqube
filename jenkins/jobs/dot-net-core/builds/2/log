@@ -1,0 +1,60 @@
+Started by user [8mha:////4LOjoajrb5jC5ikNOOgdLetbh4XNCmMSC9+3oxgU8nyeAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyhEgZe/dLi1CL9jMy8lMTySgCNEyVNwgAAAA==[0mmahmoud el hindawy
+Building in workspace /var/jenkins_home/workspace/dot-net-core
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/mahmoudelhindawy/dotNetCoreSample.git # timeout=10
+Fetching upstream changes from https://github.com/mahmoudelhindawy/dotNetCoreSample.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/mahmoudelhindawy/dotNetCoreSample.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 59b89ac72b5bc3419d0c46e63ee4445afaba153f (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 59b89ac72b5bc3419d0c46e63ee4445afaba153f
+Commit message: "first commit"
+ > git rev-list --no-walk 59b89ac72b5bc3419d0c46e63ee4445afaba153f # timeout=10
+[dot-net-core] $ /bin/sh -xe /tmp/jenkins7906469987590693529.sh
++ docker-compose up -d
+Creating network "dotnetcore_default" with the default driver
+Building dotnet
+Step 1/11 : FROM microsoft/dotnet:2.2-sdk AS build
+2.2-sdk: Pulling from microsoft/dotnet
+Digest: sha256:790bbf273314de5f0a8b33df0659253f06ea0a54e2ef1259dde73b065d8edce9
+Status: Downloaded newer image for microsoft/dotnet:2.2-sdk
+ ---> d5dbee97f68e
+Step 2/11 : WORKDIR /app
+ ---> Running in 5601660b86cd
+Removing intermediate container 5601660b86cd
+ ---> b8a1092c647b
+Step 3/11 : COPY *.sln .
+ ---> f3389b646636
+Step 4/11 : COPY aspnetapp/. ./aspnetapp/
+ ---> f98944c56308
+Step 5/11 : RUN dotnet restore
+ ---> Running in 77d2cff2e534
+  Restoring packages for /app/aspnetapp/aspnetapp.csproj...
+  Generating MSBuild file /app/aspnetapp/obj/aspnetapp.csproj.nuget.g.props.
+  Generating MSBuild file /app/aspnetapp/obj/aspnetapp.csproj.nuget.g.targets.
+  Restore completed in 3.06 sec for /app/aspnetapp/aspnetapp.csproj.
+Removing intermediate container 77d2cff2e534
+ ---> 79c5eeea264d
+Step 6/11 : WORKDIR /app/aspnetapp
+ ---> Running in 8548a36c8d01
+Removing intermediate container 8548a36c8d01
+ ---> e2199dc720f5
+Step 7/11 : RUN dotnet publish -c Release -o out
+ ---> Running in ee680dd507a4
+Microsoft (R) Build Engine version 15.9.20+g88f5fadfbe for .NET Core
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Restore completed in 162.7 ms for /app/aspnetapp/aspnetapp.csproj.
+  aspnetapp -> /app/aspnetapp/bin/Release/netcoreapp2.2/aspnetapp.dll
+  aspnetapp -> /app/aspnetapp/bin/Release/netcoreapp2.2/aspnetapp.Views.dll
+  aspnetapp -> /app/aspnetapp/out/
+Removing intermediate container ee680dd507a4
+ ---> c590c3824ed0
+Step 8/11 : FROM microsoft/dotnet:2.2-aspnetcore-runtime AS runtime
+Service 'dotnet' failed to build: Get https://registry-1.docker.io/v2/: dial tcp: lookup registry-1.docker.io on 127.0.0.53:53: read udp 127.0.0.1:39682->127.0.0.53:53: i/o timeout
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE
