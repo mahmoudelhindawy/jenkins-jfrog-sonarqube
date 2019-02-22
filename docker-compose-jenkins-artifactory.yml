@@ -9,7 +9,7 @@ services:
           container_name: jenkins
           links:
                   - artifactory
-                  - sonarqube
+#                  - sonarqube
           volumes:
                   - ./jenkins:/var/jenkins_home:rw
                   - /var/run/docker.sock:/var/run/docker.sock
@@ -21,9 +21,10 @@ services:
           container_name: artifactory
           volumes:
                   - ./artifactory:/artifactory:rw
-      sonarqube:
-          image: sonarqube:6.7-alpine
-          ports:
-                  - "9000:9000"
-                  - "9092:9092"
-          container_name: sonarqube
+
+#      sonarqube:
+#          image: sonarqube:6.7-alpine
+#          ports:
+#                  - "9000:9000"
+#                  - "9092:9092"
+#          container_name: sonarqube

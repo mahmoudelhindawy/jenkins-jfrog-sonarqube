@@ -48,7 +48,7 @@
   <reporters/>
   <publishers>
     <org.jfrog.hudson.ArtifactoryRedeployPublisher plugin="artifactory@3.1.2">
-      <evenIfUnstable>false</evenIfUnstable>
+      <evenIfUnstable>true</evenIfUnstable>
       <deployerDetails>
         <artifactoryName>devops-artifactory</artifactoryName>
         <artifactoryUrl>http://artifactory:8080/artifactory</artifactoryUrl>
@@ -67,7 +67,7 @@
         </stagingPlugin>
         <userPluginKey>None</userPluginKey>
       </deployerDetails>
-      <deployArtifacts>true</deployArtifacts>
+      <deployArtifacts>false</deployArtifacts>
       <artifactDeploymentPatterns>
         <includePatterns></includePatterns>
         <excludePatterns></excludePatterns>
@@ -155,7 +155,12 @@ sonar.language=java
       <task></task>
     </hudson.plugins.sonar.SonarRunnerBuilder>
   </prebuilders>
-  <postbuilders/>
+  <postbuilders>
+    <hudson.tasks.Shell>
+      <command>docker build -t image-devops .
+docker run -d --rm --name tomcad -p 5050:8080 image-devops</command>
+    </hudson.tasks.Shell>
+  </postbuilders>
   <runPostStepsIfResult>
     <name>FAILURE</name>
     <ordinal>2</ordinal>
